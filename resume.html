@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>張芯瑜 - 個人履歷</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .section ul li {
+            margin-bottom: 10px;
+        }
+        .contact-info a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+            margin-top: 40px;
+        }
+        .footer button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .footer button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>張芯瑜 - 個人履歷</h1>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2>基本資料</h2>
+            <ul>
+                <li><strong>姓名：</strong> 張芯瑜</li>
+                <li><strong>學號：</strong> AU114055057</li>
+                <li><strong>學歷：</strong> 亞洲大學 一年級</li>
+                <li><strong>技能：</strong> 觀察事物、拍照攝影、唱歌</li>
+                <li><strong>經歷：</strong> 無工作經驗，未來計畫實習獲得經驗</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>聯絡資訊</h2>
+            <p class="contact-info">
+                <strong>Email：</strong> <a href="mailto:xinyuzhang263@gmail.com">xinyuzhang263@gmail.com</a>
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>未來計畫</h2>
+            <p>
+                我計畫在大學期間透過實習來增加實務經驗，並希望能在攝影及創意相關領域發展未來的職業生涯。
+            </p>
+        </section>
+    </div>
+
+    <div class="footer">
+        <button onclick="showMessage()">聯絡我</button>
+    </div>
+
+    <script>
+        function showMessage() {
+            alert("感謝您的聯絡！您可以通過 email 聯絡我：xinyuzhang263@gmail.com");
+        }
+    </script>
+
+</body>
+</html>
