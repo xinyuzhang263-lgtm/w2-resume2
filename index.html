@@ -15,26 +15,41 @@ p, li { font-size: 16px; }
 .profile-img { max-width: 160px; border-radius: 50%; border: 3px solid #3498db; }
 .img-container { display:flex; justify-content:center; gap:20px; margin-bottom:20px; }
 </style>
+.photo-container {
+ display: flex;
+ gap: 15px;
+margin-bottom: 10px;
+}
+.profile {
+width: 120px; /* 顯示寬度，可調整 */
+border-radius: 50%; /* 圓形照片 */
+object-fit: cover; /* 保持比例 */
+}
+</style>
+
 </head>
 <body>
 
 <h1>張芯瑜</h1>
 
-<!-- 照片並排 -->
-<div class="img-container">
-<img src="images/me.jpeg" alt="Me">
-<img src="images/photo.jpg" alt="photo">
-</div>
+
+
 
 
 <section class="contact">
 <h2>聯絡資訊</h2>
+
+<div class="photo-container">
+<img src="images/me.jpeg" class="profile" alt="Me">
+<img src="images/photo.jpg" class="profile" alt="Photo">
+</div>
+
 <p>Email: Xinyuzhang263@gmail.com</p>
 </section>
 
 <section>
 <h2>個人簡介</h2>
-<p>我是亞洲大學一年級學生（學號 114055057），目標成為室內設計師，未來想開一間室內設計公司。</p>
+<p>我是亞洲大學一年級學生(更新)（學號 114055057），目標成為室內設計師，未來想開一間室內設計公司。</p>
 </section>
 
 <section>
