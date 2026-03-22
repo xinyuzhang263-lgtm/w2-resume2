@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -11,11 +10,12 @@ margin: 0;
 font-family: Arial;
 }
 
+/* 左右排版 */
 .resume {
 display: flex;
 }
 
-/* 左邊 */
+/* 左邊藍色 */
 .left {
 width: 30%;
 background-color: #2c3e50;
@@ -24,31 +24,37 @@ padding: 20px;
 text-align: center;
 }
 
-.photo {
-width: 180px;
-height: 180px;
-object-fit: cover;
-border-radius: 0;
-}
-
-.photo-rect {
-width: 120px;
-height: 120px;
-object-fit: cover;
-margin-top: 20px;
-}
-
-/* 右邊 */
+/* 右邊內容 */
 .right {
 width: 70%;
-padding: 20px;
+padding: 30px;
 line-height: 1.6;
 }
 
+/* 上面圓形照片（不動） */
+.photo {
+width: 120px;
+height: 120px;
+border-radius: 50%;
+object-fit: cover;
+margin-bottom: 15px;
+}
+
+/* 🔥下面大張方形照片 */
+.photo-rect {
+width: 220px;
+height: 220px;
+object-fit: cover;
+border-radius: 0;
+margin-top: 20px;
+}
+
+/* 標題底線 */
 .right h2 {
 border-bottom: 2px solid #ccc;
 padding-bottom: 5px;
 }
+
 </style>
 </head>
 
@@ -62,27 +68,20 @@ padding-bottom: 5px;
 <h2>張芯瑜</h2>
 <p>亞洲大學學生</p>
 <p>學號：114055057</p>
-
-<img src="images/photo.jpg" class="photo-rect">
+<p>年級：一年級</p>
 </div>
 
 <!-- 右邊 -->
 <div class="right">
 <h1>張芯瑜</h1>
 
+<h2>學歷</h2>
+<p>亞洲大學 室內設計系 一年級</p>
+
 <h2>個人簡介</h2>
 <p>
-我是亞洲大學室內設計系一年級學生，對空間設計與美感有高度興趣，
-喜歡透過設計表達想法，並持續學習專業技能，提升自己的創作能力。
-</p>
-
-<h2>學歷</h2>
-<p>亞洲大學 室內設計系（在學中）</p>
-
-<h2>職業目標</h2>
-<p>
-未來希望能成為一名室內設計師，結合理論與實務經驗，
-打造兼具美感與功能性的空間，並持續精進設計能力。
+我是亞洲大學一年級學生，對室內設計充滿興趣，
+喜歡觀察空間與設計，希望未來能成為專業設計師。
 </p>
 
 <h2>技能</h2>
@@ -97,6 +96,10 @@ padding-bottom: 5px;
 <li>拍照</li>
 <li>唱歌</li>
 </ul>
+
+<!-- 🔥下面那張大圖 -->
+<img src="images/photo.jpg" class="photo-rect">
+
 </div>
 
 </div>
