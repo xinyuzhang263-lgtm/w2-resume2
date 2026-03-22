@@ -2,16 +2,24 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
-<title>履歷</title>
+<title>張芯瑜 履歷</title>
 
 <style>
 body {
 margin: 0;
-font-family: Arial;
+font-family: Arial, sans-serif;
+background-color: #f5f5f5;
 }
 
+/* 整體卡片 */
 .resume {
 display: flex;
+max-width: 900px;
+margin: 40px auto;
+background: white;
+box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+border-radius: 10px;
+overflow: hidden;
 }
 
 /* 左邊 */
@@ -19,15 +27,12 @@ display: flex;
 width: 30%;
 background-color: #2c3e50;
 color: white;
-padding: 20px;
 text-align: center;
+padding: 30px 20px;
 }
 
-/* 右邊 */
-.right {
-width: 70%;
-padding: 30px;
-line-height: 1.6;
+.left h2 {
+margin: 10px 0;
 }
 
 /* 上面圓形 */
@@ -38,18 +43,40 @@ border-radius: 50%;
 object-fit: cover;
 }
 
-/* 🔥下面大圖（你要的） */
+/* 🔥下面大張方形 */
 .photo-rect {
-width: 250px;
-height: 250px;
+width: 200px;
+height: 200px;
 object-fit: cover;
 margin-top: 20px;
 }
 
-/* 標題線 */
-.right h2 {
-border-bottom: 2px solid #ccc;
-padding-bottom: 5px;
+/* 右邊 */
+.right {
+width: 70%;
+padding: 30px;
+}
+
+/* 大標題 */
+.right h1 {
+margin-top: 0;
+}
+
+/* 每區塊 */
+.section {
+margin-bottom: 25px;
+}
+
+/* 小標題 */
+.section h2 {
+border-left: 5px solid #3498db;
+padding-left: 10px;
+margin-bottom: 10px;
+}
+
+/* 清單 */
+ul {
+padding-left: 20px;
 }
 </style>
 </head>
@@ -58,42 +85,61 @@ padding-bottom: 5px;
 
 <div class="resume">
 
+<!-- 左邊 -->
 <div class="left">
 <img src="images/me.jpeg" class="photo">
+
 <h2>張芯瑜</h2>
 <p>亞洲大學學生</p>
 <p>學號：114055057</p>
-<p>年級：一年級</p>
+
+<!-- 🔥大張方形 -->
+<img src="images/photo.jpg" class="photo-rect">
 </div>
 
+<!-- 右邊 -->
 <div class="right">
 
 <h1>張芯瑜</h1>
 
+<div class="section">
 <h2>學歷</h2>
 <p>亞洲大學 室內設計系 一年級</p>
+</div>
 
+<div class="section">
 <h2>個人簡介</h2>
-<p>我是亞洲大學一年級學生，對室內設計充滿興趣，喜歡觀察空間與設計，希望未來成為設計師。</p>
+<p>
+我是亞洲大學室內設計系一年級學生，對空間設計與美感充滿興趣，
+喜歡觀察環境並從中獲得靈感，期望未來成為專業設計師。
+</p>
+</div>
 
+<div class="section">
 <h2>職業目標</h2>
-<p>希望未來能進入設計相關產業，提升自己的實務能力與創意表現。</p>
+<p>
+希望未來能進入室內設計相關產業，累積實務經驗，
+並創立自己的設計公司，打造具有特色的空間作品。
+</p>
+</div>
 
+<div class="section">
 <h2>技能</h2>
 <ul>
 <li>AutoCAD</li>
 <li>空間規劃</li>
 <li>手繪設計</li>
 </ul>
+</div>
 
+<div class="section">
 <h2>興趣</h2>
 <ul>
 <li>拍照</li>
-<li>唱歌</li>
+<li>聽音樂</li>
+<li>欣賞設計作品</li>
 </ul>
-
-<!-- 🔥你要的大方形照片 -->
-<img src="images/photo.jpg" class="photo-rect">
+</div>
 
 </div>
 
