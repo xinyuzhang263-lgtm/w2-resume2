@@ -78,6 +78,37 @@ margin-bottom: 10px;
 ul {
 padding-left: 20px;
 }
+
+/* 🎵 音樂按鈕 */
+#musicBtn {
+position: fixed;
+bottom: 20px;
+right: 20px;
+padding: 12px;
+border: none;
+border-radius: 50%;
+background: rgba(0,0,0,0.6);
+color: white;
+font-size: 18px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+#musicBtn:hover {
+transform: scale(1.2);
+}
+
+/* 🎵 左下角文字 */
+#musicText {
+position: fixed;
+left: 20px;
+bottom: 20px;
+background: rgba(0,0,0,0.5);
+color: white;
+padding: 8px 12px;
+border-radius: 10px;
+font-size: 14px;
+}
 </style>
 </head>
 
@@ -88,18 +119,16 @@ padding-left: 20px;
 <!-- 左邊 -->
 <div class="left">
 <img src="images/me.jpeg" class="photo">
-
 <h2>張芯瑜</h2>
 <p>亞洲大學學生</p>
 <p>學號：114055057</p>
 
-<!-- 🔥大張方形 -->
+<!-- 大張方形 -->
 <img src="images/photo.jpg" class="photo-rect">
 </div>
 
 <!-- 右邊 -->
 <div class="right">
-
 <h1>張芯瑜</h1>
 
 <div class="section">
@@ -140,21 +169,41 @@ padding-left: 20px;
 <li>欣賞設計作品</li>
 </ul>
 </div>
-
+</div>
 </div>
 
-</div>
-
-
-<<audio autoplay loop muted id="bgm">
-  <source src="music/song.mp3.mp3" type="audio/mpeg">
+<!-- 🎵 背景音樂 -->
+<audio autoplay loop muted id="bgm">
+<source src="music/song.mp3" type="audio/mpeg">
 </audio>
 
+<!-- 🎵 音樂按鈕 -->
+<button id="musicBtn">🔇</button>
+
+<!-- 🎵 顯示文字 -->
+<div id="musicText">🎵 Now Playing</div>
+
 <script>
-document.addEventListener("click", function() {
-  const audio = document.getElementById("bgm");
-  audio.muted = false;
-  audio.play();
+const audio = document.getElementById("bgm");
+const btn = document.getElementById("musicBtn");
+
+// 解鎖音樂（點一次）
+document.addEventListener("click", function () {
+audio.muted = false;
+audio.play();
+}, { once: true });
+
+// 按鈕控制
+btn.addEventListener("click", function () {
+if (audio.paused) {
+audio.play();
+btn.innerHTML = "🔊";
+} else {
+audio.pause();
+btn.innerHTML = "🔇";
+}
 });
-</script>/body>
+</script>
+
+</body>
 </html>
