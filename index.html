@@ -31,11 +31,6 @@ text-align: center;
 padding: 30px 20px;
 }
 
-.left h2 {
-margin: 10px 0;
-}
-
-/* 上面圓形 */
 .photo {
 width: 120px;
 height: 120px;
@@ -43,7 +38,6 @@ border-radius: 50%;
 object-fit: cover;
 }
 
-/* 🔥下面大張方形 */
 .photo-rect {
 width: 200px;
 height: 200px;
@@ -57,57 +51,68 @@ width: 70%;
 padding: 30px;
 }
 
-/* 大標題 */
-.right h1 {
-margin-top: 0;
-}
-
-/* 每區塊 */
 .section {
 margin-bottom: 25px;
 }
 
-/* 小標題 */
 .section h2 {
 border-left: 5px solid #3498db;
 padding-left: 10px;
 margin-bottom: 10px;
 }
 
-/* 清單 */
 ul {
 padding-left: 20px;
 }
 
-/* 🎵 音樂按鈕 */
-#musicBtn {
+/* 🎵 音樂播放器（升級版） */
+.music-player{
 position: fixed;
 bottom: 20px;
 right: 20px;
-padding: 12px;
-border: none;
-border-radius: 50%;
-background: rgba(0,0,0,0.6);
+display: flex;
+align-items: center;
+gap: 12px;
+background: rgba(0,0,0,0.75);
+padding: 12px 15px;
+border-radius: 15px;
 color: white;
-font-size: 18px;
+backdrop-filter: blur(8px);
+}
+
+#playBtn{
+width: 40px;
+height: 40px;
+border-radius: 50%;
+border: none;
 cursor: pointer;
+font-size: 16px;
+background: #3498db;
+color: white;
 transition: 0.3s;
 }
 
-#musicBtn:hover {
-transform: scale(1.2);
+#playBtn:hover{
+transform: scale(1.1);
 }
 
-/* 🎵 左下角文字 */
-#musicText {
-position: fixed;
-left: 20px;
-bottom: 20px;
-background: rgba(0,0,0,0.5);
-color: white;
-padding: 8px 12px;
-border-radius: 10px;
-font-size: 14px;
+.music-info{
+font-size: 12px;
+}
+
+.bar{
+width: 120px;
+height: 5px;
+background: rgba(255,255,255,0.3);
+border-radius: 5px;
+margin-top: 5px;
+overflow: hidden;
+}
+
+#progress{
+height: 100%;
+width: 0%;
+background: #1abc9c;
 }
 </style>
 </head>
@@ -123,7 +128,6 @@ font-size: 14px;
 <p>亞洲大學學生</p>
 <p>學號：114055057</p>
 
-<!-- 大張方形 -->
 <img src="images/photo.jpg" class="photo-rect">
 </div>
 
@@ -138,18 +142,12 @@ font-size: 14px;
 
 <div class="section">
 <h2>個人簡介</h2>
-<p>
-我是亞洲大學室內設計系一年級學生，對空間設計與美感充滿興趣，
-喜歡觀察環境並從中獲得靈感，期望未來成為專業設計師。
-</p>
+<p>我是亞洲大學室內設計系一年級學生，對空間設計與美感充滿興趣。</p>
 </div>
 
 <div class="section">
 <h2>職業目標</h2>
-<p>
-希望未來能進入室內設計相關產業，累積實務經驗，
-並創立自己的設計公司，打造具有特色的空間作品。
-</p>
+<p>希望未來進入室內設計產業，並創立自己的設計公司。</p>
 </div>
 
 <div class="section">
@@ -166,43 +164,57 @@ font-size: 14px;
 <ul>
 <li>拍照</li>
 <li>聽音樂</li>
-<li>欣賞設計作品</li>
+<li>設計作品</li>
 </ul>
+</div>
+
+</div>
+</div>
+
+<!-- 🎵 音樂播放器 -->
+<div class="music-player">
+<button id="playBtn">▶</button>
+
+<div class="music-info">
+🎵 Music
+<div class="bar">
+<div id="progress"></div>
 </div>
 </div>
 </div>
 
-<!-- 🎵 背景音樂 -->
-<audio autoplay loop muted id="bgm">
+<audio id="bgm" loop>
 <source src="music/song.mp3" type="audio/mpeg">
 </audio>
 
-<!-- 🎵 音樂按鈕 -->
-<button id="musicBtn">🔇</button>
-
-<!-- 🎵 顯示文字 -->
-<div id="musicText">🎵 Now Playing</div>
-
 <script>
 const audio = document.getElementById("bgm");
-const btn = document.getElementById("musicBtn");
+const playBtn = document.getElementById("playBtn");
+const progress = document.getElementById("progress");
 
-// 解鎖音樂（點一次）
-document.addEventListener("click", function () {
-audio.muted = false;
-audio.play();
-}, { once: true });
-
-// 按鈕控制
-btn.addEventListener("click", function () {
+/* 播放 / 暫停 */
+playBtn.addEventListener("click", () => {
 if (audio.paused) {
 audio.play();
-btn.innerHTML = "🔊";
+playBtn.innerHTML = "⏸";
 } else {
 audio.pause();
-btn.innerHTML = "🔇";
+playBtn.innerHTML = "▶";
 }
 });
+
+/* 進度條 */
+audio.addEventListener("timeupdate", () => {
+if (audio.duration) {
+const percent = (audio.currentTime / audio.duration) * 100;
+progress.style.width = percent + "%";
+}
+});
+
+/* 點擊頁面解鎖音樂（瀏覽器限制） */
+document.addEventListener("click", () => {
+audio.play();
+}, { once: true });
 </script>
 
 </body>
