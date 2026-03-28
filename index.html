@@ -145,8 +145,16 @@ padding-left: 20px;
 
 </div>
 
-<audio autoplay loop controls style="width: 220px; margin-top: 20px;">
-<source src="music/song.mp3.mp3" type="audio/mpeg">
+
+<<audio autoplay loop muted id="bgm">
+  <source src="music/song.mp3" type="audio/mpeg">
 </audio>
-</body>
+
+<script>
+document.addEventListener("click", function() {
+  const audio = document.getElementById("bgm");
+  audio.muted = false;
+  audio.play();
+});
+</script>/body>
 </html>
